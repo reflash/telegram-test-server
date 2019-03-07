@@ -12,6 +12,7 @@ interface Update {
   message?: Message;
   callback_query?: CallbackQuery;
   callback_query_answer?: CallbackQueryAnswer;
+  edit_message_reply_markup?: EditMessageReplyMarkup;
 }
 
 type MessageType =
@@ -36,7 +37,7 @@ interface Message {
   date?: number;
   chat_id?: number;
   text?: string;
-  reply_markup?: { inline_keyboard: any[] };
+  reply_markup?: ReplyMarkup;
   entities?: Array<{
     offset?: number;
     length?: number;
@@ -51,9 +52,29 @@ interface CallbackQuery {
   message: Message;
 }
 
+interface ReplyMarkup {
+  inline_keyboard: InlineKeyboardButton[][]
+}
+
+interface InlineKeyboardButton {
+  text: string;
+  url?: string;
+  callback_data?: string;
+  switch_inline_query?: string;
+  switch_inline_query_current_chat?: string;
+  callback_game?: any;
+  pay?: boolean;
+}
+
 interface CallbackQueryAnswer {
   callback_query_id: number;
   text: string;
+}
+
+interface EditMessageReplyMarkup {
+  message_id?: number;
+  inline_message_id: string;
+  reply_markup: ReplyMarkup;
 }
 
 interface ServerOptions {
@@ -89,6 +110,7 @@ interface Bot {
     sendvenue;
     sendcontact;
     sendchataction;
+    editmessagereplymarkup;
   };
 
   resolveChat(chatId: number): Chat;
