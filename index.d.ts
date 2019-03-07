@@ -1,11 +1,11 @@
 interface AccountInfo {
-  id: number;
-  is_bot: boolean;
-  username: string;
-  first_name: string;
-  last_name: string;
-  language_code: string;
-  type: string;
+  id?: number;
+  is_bot?: boolean;
+  username?: string;
+  first_name?: string;
+  last_name?: string;
+  language_code?: string;
+  type?: string;
 }
 
 interface Update {
@@ -155,11 +155,11 @@ interface User {
 export class TelegramServer {
   constructor(options?: ServerOptions);
 
-  createUser(info: AccountInfo): User;
+  createUser(info?: AccountInfo): User;
 
-  createBot(info: AccountInfo): Bot;
+  createBot(info?: AccountInfo): Bot;
 
-  createChat(owner: Bot | User, info: AccountInfo): Chat;
+  createChat(owner: Bot | User, info?: AccountInfo): Chat;
 
   createSandbox(startParams: string): { user: User, bot: Bot, chat: Chat };
 
