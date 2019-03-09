@@ -163,7 +163,7 @@ export class TelegramServer {
 
   createSandbox(startParams: string): { user: User, bot: Bot, chat: Chat };
 
-  findChat(chatId: number): Chat;
+  findChat(chatId: number, botId?: number): Chat;
 
   findChatByCbQuery(cbQuerId: number): Chat;
 
