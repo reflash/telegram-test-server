@@ -29,7 +29,8 @@
     "koa": "^2.4.1",
     "koa-body": "^2.5.0",
     "koa-router": "^7.3.0",
-    "node-fetch": "^1.6.3"
+    "node-fetch": "^1.6.3",
+    "rxjs": "^6.4.0"
   },
   "devDependencies": {
     "ava": "^0.24.0",

@@ -169,6 +169,8 @@ export class TelegramServer {
 
   getApiEndpoint(): string;
 
+  waitForNextMessages(count?): Promise<void>;
+
   start(): void;
 
   stop(): void;
