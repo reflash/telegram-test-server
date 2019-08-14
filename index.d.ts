@@ -111,6 +111,7 @@ interface Bot {
     sendcontact;
     sendchataction;
     editmessagereplymarkup;
+    editmessagetext;
   };
 
   resolveChat(chatId: number): Chat;
